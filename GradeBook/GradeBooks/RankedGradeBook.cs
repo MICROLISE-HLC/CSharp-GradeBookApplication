@@ -30,5 +30,13 @@ namespace GradeBook.GradeBooks
             else
                 return 'F';               
         }
+
+        public override CalculateStatistics()
+        {
+            if (Students.Count < 5)
+                throw new InvalidOperationException("Ranked grading requires a minimum of 5 students with grades in order to properly calculate a student's overall grade.");
+
+            base.CalculateStatistics();
+        }
     }    
 }
